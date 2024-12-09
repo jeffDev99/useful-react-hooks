@@ -35,4 +35,35 @@ const useCalculateDuration = (startDate, endDate) => {
   const days = duration / (1000 * 60 * 60 * 24);
   return days;
 };
+
+// simple dictinary 
+const useVehicleP2E = (vehicle) => {
+  const vehicles = {
+    "SUV": "شاسی بلند",
+    "Bus": "اتوبوس",
+    "Van": "مینی بوس",
+    "Airplane": "هواپیما",
+  }
+  return vehicles[vehicle];
+}
+
+// show icon based on text
+const showIconBasedOnOption = (option) => {
+  switch (option) {
+    case "نهار و صبحانه":
+      return <Coffee size={24} color="#7D7D7D" className="w-[14px] lg:w-6" />;
+    case "نهار و شام":
+      return <Coffee size={24} color="#7D7D7D" className="w-[14px] lg:w-6" />;
+    case "صبحانه، نهار و شام":
+      return <Coffee size={24} color="#7D7D7D" className="w-[14px] lg:w-6" />;
+    case "ساحل اختصاصی":
+      return <Wind size={24} color="#7D7D7D" className="w-[14px] lg:w-6" />;
+    case "راهنمای تور":
+      return <UserTick size={24} color="#7D7D7D" className="w-[14px] lg:w-6" />;
+    case "هفل پنج ستاره":
+      return <Star1 size={24} color="#7D7D7D" className="w-[14px] lg:w-6" />;
+    default:
+      return <></>;
+  }
+};
 export { useE2p, useP2e, useSp , useGregorian2Persian , useCalculateDuration };
