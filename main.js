@@ -27,4 +27,12 @@ const useGregorian2Persian = (date) => {
   return `${day} ${monthName} ${yearPersian}`;
 };
 
-export { useE2p, useP2e, useSp };
+//  hooks for Calculate Duration days between two time in gregorian
+const useCalculateDuration = (startDate, endDate) => {
+  const startDateGregorian = new Date(startDate);
+  const endDateGregorian = new Date(endDate);
+  const duration = endDateGregorian - startDateGregorian;
+  const days = duration / (1000 * 60 * 60 * 24);
+  return days;
+};
+export { useE2p, useP2e, useSp , useGregorian2Persian , useCalculateDuration };
